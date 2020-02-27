@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SCalc</string>
+    <string name="enter_expression">Введите арифметическое выражение:</string>
+    <string name="expression">Арифметическое выражение</string>
+    <string name="equal">=</string>
+    <string name="result">Результат</string>
 </resources>
