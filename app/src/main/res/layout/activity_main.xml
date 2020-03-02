@@ -43,7 +43,7 @@
             android:autofillHints="" />
 
         <Button
-            android:id="@+id/calc"
+            android:id="@+id/calculate"
             android:layout_width="127dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
