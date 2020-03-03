@@ -36,11 +36,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/expression"
-            android:inputType="text"
-            android:textAlignment="center"
-            android:autofillHints="" />
+            android:inputType="numberSigned|number|numberDecimal|textCapCharacters"
+            android:textAlignment="center" />
 
         <Button
             android:id="@+id/calculate"
