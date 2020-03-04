@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
                 expression = n.parse(s)
                 val calculator = Calculator()
                 result.text = calculator.calc(expression).toString()
+            } catch (e: NumberFormatException) {
+                Toast.makeText(this, "Некорректное выражение", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
                 Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
             }
