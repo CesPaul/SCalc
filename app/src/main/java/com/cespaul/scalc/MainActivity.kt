@@ -9,9 +9,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var toast: Toast
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        toast = Toast.makeText(applicationContext, "", Toast.LENGTH_SHORT)
 
         // Фильтрация ввода и применение фильтра.
         val filter: InputFilter = object : InputFilter {
@@ -38,10 +41,15 @@ class MainActivity : AppCompatActivity() {
                 val calculator = Calculator()
                 result.text = calculator.calc(expression).toString()
             } catch (e: NumberFormatException) {
-                Toast.makeText(this, "Некорректное выражение", Toast.LENGTH_SHORT).show()
+                showToast("Некорректное выражение")
             } catch (e: Exception) {
-                Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+                showToast(e.message)
             }
         }
+    }
+
+    fun showToast(exceptionMessage: String?) {
+        toast.setText(exceptionMessage)
+        toast.show()
     }
 }
