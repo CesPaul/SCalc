@@ -14,4 +14,15 @@ class ParserUnitTest {
             arrayOf("13", "37", "+", "8", "3", "2", "*", "-", "*")
         )
     }
+
+    @Test
+    fun CheckParserWithoutBracket() {
+        val s = "13+37*8-3*2"
+        val n = ExpressionParser()
+        val expression: List<String> = n.parse(s)
+        assertArrayEquals(
+            expression.toTypedArray(),
+            arrayOf("13", "37", "8", "*", "+", "3", "2", "*", "-")
+        )
+    }
 }
